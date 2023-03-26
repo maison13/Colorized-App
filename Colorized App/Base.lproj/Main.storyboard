@@ -70,7 +70,7 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="dQc-od-riS">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.69999999999999996" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="dQc-od-riS">
                                 <rect key="frame" x="103" y="208" width="203" height="31"/>
                                 <color key="minimumTrackTintColor" systemColor="systemRedColor"/>
                                 <color key="thumbTintColor" systemColor="systemRedColor"/>
@@ -78,7 +78,7 @@
                                     <action selector="redSliderAction" destination="BYZ-38-t0r" eventType="valueChanged" id="pf7-sM-Ckf"/>
                                 </connections>
                             </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="3XT-MS-cNo">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.11" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="3XT-MS-cNo">
                                 <rect key="frame" x="103" y="277" width="203" height="31"/>
                                 <color key="minimumTrackTintColor" systemColor="systemBlueColor"/>
                                 <color key="thumbTintColor" systemColor="systemBlueColor"/>
@@ -123,7 +123,7 @@
                         <outlet property="greenSlider" destination="5wq-eI-zja" id="b8J-Yj-M8U"/>
                         <outlet property="redLabel" destination="waH-bm-Zjw" id="QZO-d0-4ac"/>
                         <outlet property="redSlider" destination="dQc-od-riS" id="p7S-eN-wyJ"/>
-                        <outlet property="resultOfColorView" destination="Wzk-jT-xm8" id="oam-f7-Ztl"/>
+                        <outlet property="resultOfMixtureColorView" destination="Wzk-jT-xm8" id="oam-f7-Ztl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
