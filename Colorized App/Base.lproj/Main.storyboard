@@ -74,16 +74,25 @@
                                 <rect key="frame" x="103" y="208" width="203" height="31"/>
                                 <color key="minimumTrackTintColor" systemColor="systemRedColor"/>
                                 <color key="thumbTintColor" systemColor="systemRedColor"/>
+                                <connections>
+                                    <action selector="redSliderAction" destination="BYZ-38-t0r" eventType="valueChanged" id="pf7-sM-Ckf"/>
+                                </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="3XT-MS-cNo">
                                 <rect key="frame" x="103" y="277" width="203" height="31"/>
                                 <color key="minimumTrackTintColor" systemColor="systemBlueColor"/>
                                 <color key="thumbTintColor" systemColor="systemBlueColor"/>
+                                <connections>
+                                    <action selector="blueSliderAction" destination="BYZ-38-t0r" eventType="valueChanged" id="MHZ-Hg-plV"/>
+                                </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="5wq-eI-zja">
                                 <rect key="frame" x="103" y="243" width="203" height="31"/>
                                 <color key="minimumTrackTintColor" systemColor="systemGreenColor"/>
                                 <color key="thumbTintColor" systemColor="systemGreenColor"/>
+                                <connections>
+                                    <action selector="greenSliderAction" destination="BYZ-38-t0r" eventType="valueChanged" id="wno-jR-vyk"/>
+                                </connections>
                             </slider>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -107,6 +116,15 @@
                             <constraint firstItem="dQc-od-riS" firstAttribute="top" secondItem="Wzk-jT-xm8" secondAttribute="bottom" constant="51" id="vPx-96-Mmc"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="blueLabel" destination="nNM-Gy-JBg" id="qgL-yC-zdv"/>
+                        <outlet property="blueSlider" destination="3XT-MS-cNo" id="COk-1D-EBT"/>
+                        <outlet property="greenLabel" destination="VWK-rA-Bfr" id="RZG-UO-aAz"/>
+                        <outlet property="greenSlider" destination="5wq-eI-zja" id="b8J-Yj-M8U"/>
+                        <outlet property="redLabel" destination="waH-bm-Zjw" id="QZO-d0-4ac"/>
+                        <outlet property="redSlider" destination="dQc-od-riS" id="p7S-eN-wyJ"/>
+                        <outlet property="resultOfColorView" destination="Wzk-jT-xm8" id="oam-f7-Ztl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
