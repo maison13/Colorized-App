@@ -49,6 +49,7 @@ final class ViewController: UIViewController {
     }
      
     private func setupResultOfColorView() {
+        resultOfMixtureColorView.layer.cornerRadius = 25
         resultOfMixtureColorView.backgroundColor = UIColor(
             red: CGFloat(redSlider.value),
             green: CGFloat(greenSlider.value),
