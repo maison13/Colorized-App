@@ -9,7 +9,7 @@ import UIKit
 
 final class ViewController: UIViewController {
 
-    @IBOutlet weak var resultOfMixtureColorView: UIView!
+    @IBOutlet weak var colorMixtureView: UIView!
     
     @IBOutlet weak var redLabel: UILabel!
     @IBOutlet weak var greenLabel: UILabel!
@@ -18,27 +18,22 @@ final class ViewController: UIViewController {
     @IBOutlet weak var redSlider: UISlider!
     @IBOutlet weak var greenSlider: UISlider!
     @IBOutlet weak var blueSlider: UISlider!
-    
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         setupAllLabel()
         setupResultOfColorView()
      }
-    
-    
-    @IBAction func redSliderAction() {
-        redLabel.text = redSlider.value.formatted(.number.precision(.fractionLength(2)))
-        setupResultOfColorView()
-    }
-       
-    @IBAction func greenSliderAction() {
-        greenLabel.text = greenSlider.value.formatted(.number.precision(.fractionLength(2)))
-        setupResultOfColorView()
-    }
-    
-    @IBAction func blueSliderAction() {
-        blueLabel.text = blueSlider.value.formatted(.number.precision(.fractionLength(2)))
+        
+    @IBAction func sliderAction(_ sender: UISlider) {
+        switch sender {
+        case redSlider:
+            redLabel.text = redSlider.value.formatted(.number.precision(.fractionLength(2)))
+        case greenSlider:
+            greenLabel.text = greenSlider.value.formatted(.number.precision(.fractionLength(2)))
+        default:
+            blueLabel.text = blueSlider.value.formatted(.number.precision(.fractionLength(2)))
+        }
         setupResultOfColorView()
     }
     
@@ -49,15 +44,13 @@ final class ViewController: UIViewController {
     }
      
     private func setupResultOfColorView() {
-        resultOfMixtureColorView.layer.cornerRadius = 25
-        resultOfMixtureColorView.backgroundColor = UIColor(
+        colorMixtureView.layer.cornerRadius = 25
+        colorMixtureView.backgroundColor = UIColor(
             red: CGFloat(redSlider.value),
             green: CGFloat(greenSlider.value),
             blue: CGFloat(blueSlider.value), alpha: CGFloat(1.0))
        
     }
-    
-    
     
 }
 
