@@ -30,13 +30,13 @@ final class SettingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupAllLabel()
-        
-      //  setupAllTF()
         setupResultOfColorView()
         
         redTextField.delegate = self
         greenTextField.delegate = self
         blueTextField.delegate = self
+        
+       
      }
         
     
@@ -81,6 +81,10 @@ final class SettingViewController: UIViewController {
     
     private func string(from slider: UISlider) -> String {
         String(format: "%.2f", slider.value)
+    }
+    private func changeBackgroundColor() {
+    backgroundColor: UIColor(
+        
     }
    
     

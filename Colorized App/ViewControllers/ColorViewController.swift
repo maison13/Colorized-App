@@ -11,12 +11,14 @@ class ColorViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let settingVC = segue.destination as? SettingViewController else { return }
         settingVC.backgroundColor = view.backgroundColor
     }
-
+    
+   
+    
 }
