@@ -82,10 +82,7 @@ final class SettingViewController: UIViewController {
     private func string(from slider: UISlider) -> String {
         String(format: "%.2f", slider.value)
     }
-    private func changeBackgroundColor() {
-    backgroundColor: UIColor(
-        
-    }
+    
    
     
 }
