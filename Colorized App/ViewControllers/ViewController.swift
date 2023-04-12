@@ -25,6 +25,10 @@ final class ViewController: UIViewController {
         setupResultOfColorView()
      }
         
+    
+    @IBAction func doneButtonAction(_ sender: UIButton) {
+    }
+    
     @IBAction func sliderAction(_ sender: UISlider) {
         switch sender {
         case redSlider:
@@ -36,6 +40,7 @@ final class ViewController: UIViewController {
         }
         setupResultOfColorView()
     }
+    
     
     private func setupAllLabel() {
         redLabel.text = string(from: redSlider)
