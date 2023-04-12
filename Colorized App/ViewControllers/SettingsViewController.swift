@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class SettingViewController: UIViewController {
+final class SettingsViewController: UIViewController {
 
     @IBOutlet weak var colorMixtureView: UIView!
     
@@ -26,21 +26,26 @@ final class SettingViewController: UIViewController {
     
     
     var backgroundColor: UIColor!
+    unowned var delegate: SettingsViewControllerDelegate!
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupAllLabel()
+        setupAllValueOfColors()
         setupResultOfColorView()
         
         redTextField.delegate = self
         greenTextField.delegate = self
         blueTextField.delegate = self
         
-       
+        
+        
+        
      }
         
     
     @IBAction func doneButtonAction(_ sender: UIButton) {
+        delegate.setBackgroundColor(for: colorMixtureView.backgroundColor ?? backgroundColor)
+        dismiss(animated: true)
     }
     
     @IBAction func sliderAction(_ sender: UISlider) {
@@ -59,13 +64,19 @@ final class SettingViewController: UIViewController {
     }
     
     
-    private func setupAllLabel() {
+    private func setupAllValueOfColors() {
         redLabel.text = string(from: redSlider)
         greenLabel.text = string(from: greenSlider)
         blueLabel.text = string(from: blueSlider)
         
-       
+        redTextField.text = String(format: "%.2f", backgroundColor.rgba.red)
+        greenTextField.text = String(format: "%.2f", backgroundColor.rgba.green)
+        blueTextField.text = String(format: "%.2f", backgroundColor.rgba.blue)
         
+        redSlider.value = Float(backgroundColor.rgba.red)
+        greenSlider.value = Float(backgroundColor.rgba.green)
+        blueSlider.value = Float(backgroundColor.rgba.blue)
+
     }
         
     private func setupResultOfColorView() {
@@ -87,7 +98,7 @@ final class SettingViewController: UIViewController {
     
 }
 // MARK: - UITextFieldDelegate
-extension SettingViewController: UITextFieldDelegate {
+extension SettingsViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         guard let newValue = textField.text else { return }
         guard let numberValue = Float(newValue) else { return }
@@ -103,6 +114,18 @@ extension SettingViewController: UITextFieldDelegate {
             blueLabel.text = String(numberValue)
             blueSlider.value = numberValue
         }
+    }
+}
+// MARK: - return RGBA from UIColor
+extension UIColor {
+    var rgba: (red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat) {
+        var red: CGFloat = 0
+        var green: CGFloat = 0
+        var blue: CGFloat = 0
+        var alpha: CGFloat = 0
+        getRed(&red, green: &green, blue: &blue, alpha: &alpha)
+        
+        return (red, green, blue, alpha)
     }
 }
 

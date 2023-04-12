@@ -10,7 +10,7 @@
 		878CB82B29E7385B00B2E095 /* ColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878CB82A29E7385B00B2E095 /* ColorViewController.swift */; };
 		87A514B629D0888B00B0C12C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A514B529D0888B00B0C12C /* AppDelegate.swift */; };
 		87A514B829D0888B00B0C12C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A514B729D0888B00B0C12C /* SceneDelegate.swift */; };
-		87A514BA29D0888B00B0C12C /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A514B929D0888B00B0C12C /* SettingViewController.swift */; };
+		87A514BA29D0888B00B0C12C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A514B929D0888B00B0C12C /* SettingsViewController.swift */; };
 		87A514BD29D0888B00B0C12C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87A514BB29D0888B00B0C12C /* Main.storyboard */; };
 		87A514BF29D0888C00B0C12C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87A514BE29D0888C00B0C12C /* Assets.xcassets */; };
 		87A514C229D0888C00B0C12C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87A514C029D0888C00B0C12C /* LaunchScreen.storyboard */; };
@@ -21,7 +21,7 @@
 		87A514B229D0888B00B0C12C /* Colorized App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Colorized App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		87A514B529D0888B00B0C12C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87A514B729D0888B00B0C12C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		87A514B929D0888B00B0C12C /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		87A514B929D0888B00B0C12C /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		87A514BC29D0888B00B0C12C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		87A514BE29D0888C00B0C12C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		87A514C129D0888C00B0C12C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -61,8 +61,8 @@
 		878CB82829E72F1600B2E095 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				87A514B929D0888B00B0C12C /* SettingViewController.swift */,
 				878CB82A29E7385B00B2E095 /* ColorViewController.swift */,
+				87A514B929D0888B00B0C12C /* SettingsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -173,7 +173,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				87A514BA29D0888B00B0C12C /* SettingViewController.swift in Sources */,
+				87A514BA29D0888B00B0C12C /* SettingsViewController.swift in Sources */,
 				87A514B629D0888B00B0C12C /* AppDelegate.swift in Sources */,
 				878CB82B29E7385B00B2E095 /* ColorViewController.swift in Sources */,
 				87A514B829D0888B00B0C12C /* SceneDelegate.swift in Sources */,
