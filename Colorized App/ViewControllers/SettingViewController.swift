@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ViewController: UIViewController {
+final class SettingViewController: UIViewController {
 
     @IBOutlet weak var colorMixtureView: UIView!
     
@@ -18,11 +18,25 @@ final class ViewController: UIViewController {
     @IBOutlet weak var redSlider: UISlider!
     @IBOutlet weak var greenSlider: UISlider!
     @IBOutlet weak var blueSlider: UISlider!
+    
+    
+    @IBOutlet weak var redTextField: UITextField!
+    @IBOutlet weak var greenTextField: UITextField!
+    @IBOutlet weak var blueTextField: UITextField!
+    
+    
+    var backgroundColor: UIColor!
         
     override func viewDidLoad() {
         super.viewDidLoad()
         setupAllLabel()
+        
+      //  setupAllTF()
         setupResultOfColorView()
+        
+        redTextField.delegate = self
+        greenTextField.delegate = self
+        blueTextField.delegate = self
      }
         
     
@@ -33,10 +47,13 @@ final class ViewController: UIViewController {
         switch sender {
         case redSlider:
             redLabel.text = string(from: redSlider)
+            redTextField.text = string(from: redSlider)
         case greenSlider:
             greenLabel.text = string(from: greenSlider)
+            greenTextField.text = string(from: greenSlider)
         default:
             blueLabel.text = string(from: blueSlider)
+            blueTextField.text = string(from: blueSlider)
         }
         setupResultOfColorView()
     }
@@ -46,8 +63,11 @@ final class ViewController: UIViewController {
         redLabel.text = string(from: redSlider)
         greenLabel.text = string(from: greenSlider)
         blueLabel.text = string(from: blueSlider)
+        
+       
+        
     }
-     
+        
     private func setupResultOfColorView() {
         colorMixtureView.layer.cornerRadius = 25
         colorMixtureView.backgroundColor = UIColor(
@@ -62,6 +82,26 @@ final class ViewController: UIViewController {
     private func string(from slider: UISlider) -> String {
         String(format: "%.2f", slider.value)
     }
+   
     
+}
+// MARK: - UITextFieldDelegate
+extension SettingViewController: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        guard let newValue = textField.text else { return }
+        guard let numberValue = Float(newValue) else { return }
+        
+        switch textField {
+        case redTextField:
+            redLabel.text = String(numberValue)
+            redSlider.value = numberValue
+        case greenTextField:
+            greenLabel.text = String(numberValue)
+            greenSlider.value = numberValue
+        default:
+            blueLabel.text = String(numberValue)
+            blueSlider.value = numberValue
+        }
+    }
 }
 

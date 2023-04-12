@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Setting View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Colorized_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="SettingViewController" customModule="Colorized_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -27,7 +27,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" semanticContentAttribute="playback" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="MDh-pn-AiD">
-                                <rect key="frame" x="16" y="200" width="240" height="110"/>
+                                <rect key="frame" x="16" y="200" width="232" height="110"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="qsy-S1-h0w">
                                         <rect key="frame" x="0.0" y="8.5" width="25.5" height="93.5"/>
@@ -76,10 +76,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Hn0-U5-wiH">
-                                        <rect key="frame" x="62.5" y="0.0" width="177.5" height="110"/>
+                                        <rect key="frame" x="62.5" y="0.0" width="169.5" height="110"/>
                                         <subviews>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.69999999999999996" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="dQc-od-riS">
-                                                <rect key="frame" x="-2" y="0.0" width="181.5" height="31"/>
+                                                <rect key="frame" x="-2" y="0.0" width="173.5" height="31"/>
                                                 <color key="minimumTrackTintColor" systemColor="systemRedColor"/>
                                                 <color key="thumbTintColor" systemColor="systemRedColor"/>
                                                 <connections>
@@ -87,7 +87,7 @@
                                                 </connections>
                                             </slider>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="5wq-eI-zja">
-                                                <rect key="frame" x="-2" y="40" width="181.5" height="31"/>
+                                                <rect key="frame" x="-2" y="40" width="173.5" height="31"/>
                                                 <color key="minimumTrackTintColor" systemColor="systemGreenColor"/>
                                                 <color key="thumbTintColor" systemColor="systemGreenColor"/>
                                                 <connections>
@@ -95,7 +95,7 @@
                                                 </connections>
                                             </slider>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.11" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="3XT-MS-cNo">
-                                                <rect key="frame" x="-2" y="80" width="181.5" height="31"/>
+                                                <rect key="frame" x="-2" y="80" width="173.5" height="31"/>
                                                 <color key="minimumTrackTintColor" systemColor="systemBlueColor"/>
                                                 <color key="thumbTintColor" systemColor="systemBlueColor"/>
                                                 <connections>
@@ -155,7 +155,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fFI-IW-qn6" secondAttribute="trailing" constant="16" id="AUX-UA-e26"/>
                             <constraint firstItem="MDh-pn-AiD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="D9B-Cr-UDn"/>
                             <constraint firstItem="Wzk-jT-xm8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="N59-to-Y00"/>
-                            <constraint firstItem="hsV-1b-gmL" firstAttribute="leading" secondItem="Hn0-U5-wiH" secondAttribute="trailing" constant="8" symbolic="YES" id="Xrf-N2-MaO"/>
+                            <constraint firstItem="hsV-1b-gmL" firstAttribute="leading" secondItem="Hn0-U5-wiH" secondAttribute="trailing" constant="16" id="Xrf-N2-MaO"/>
                             <constraint firstItem="MDh-pn-AiD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="200" id="aYO-O4-Szt"/>
                             <constraint firstItem="Wzk-jT-xm8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="p3O-vG-FPa"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Wzk-jT-xm8" secondAttribute="trailing" constant="16" id="pnA-05-2HB"/>
@@ -167,21 +167,24 @@
                     <connections>
                         <outlet property="blueLabel" destination="nNM-Gy-JBg" id="qgL-yC-zdv"/>
                         <outlet property="blueSlider" destination="3XT-MS-cNo" id="COk-1D-EBT"/>
+                        <outlet property="blueTextField" destination="YVG-eS-imk" id="wsO-pN-fco"/>
                         <outlet property="colorMixtureView" destination="Wzk-jT-xm8" id="oam-f7-Ztl"/>
                         <outlet property="greenLabel" destination="VWK-rA-Bfr" id="RZG-UO-aAz"/>
                         <outlet property="greenSlider" destination="5wq-eI-zja" id="b8J-Yj-M8U"/>
+                        <outlet property="greenTextField" destination="hsV-1b-gmL" id="2uP-ib-BCQ"/>
                         <outlet property="redLabel" destination="waH-bm-Zjw" id="QZO-d0-4ac"/>
                         <outlet property="redSlider" destination="dQc-od-riS" id="p7S-eN-wyJ"/>
+                        <outlet property="redTextField" destination="Gcz-K1-DMP" id="5hh-ki-Hrh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1036.875" y="-27.464788732394368"/>
         </scene>
-        <!--View Controller-->
+        <!--Color View Controller-->
         <scene sceneID="XRF-y3-Drf">
             <objects>
-                <viewController id="Msn-PK-7Vx" sceneMemberID="viewController">
+                <viewController id="Msn-PK-7Vx" customClass="ColorViewController" customModule="Colorized_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AYS-p2-7Gc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
