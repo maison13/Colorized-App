@@ -28,19 +28,19 @@ final class ViewController: UIViewController {
     @IBAction func sliderAction(_ sender: UISlider) {
         switch sender {
         case redSlider:
-            redLabel.text = redSlider.value.formatted(.number.precision(.fractionLength(2)))
+            redLabel.text = string(from: redSlider)
         case greenSlider:
-            greenLabel.text = greenSlider.value.formatted(.number.precision(.fractionLength(2)))
+            greenLabel.text = string(from: greenSlider)
         default:
-            blueLabel.text = blueSlider.value.formatted(.number.precision(.fractionLength(2)))
+            blueLabel.text = string(from: blueSlider)
         }
         setupResultOfColorView()
     }
     
     private func setupAllLabel() {
-        redLabel.text = redSlider.value.formatted(.number.precision(.fractionLength(2)))
-        greenLabel.text = greenSlider.value.formatted(.number.precision(.fractionLength(2)))
-        blueLabel.text = blueSlider.value.formatted(.number.precision(.fractionLength(2)))
+        redLabel.text = string(from: redSlider)
+        greenLabel.text = string(from: greenSlider)
+        blueLabel.text = string(from: blueSlider)
     }
      
     private func setupResultOfColorView() {
@@ -48,8 +48,14 @@ final class ViewController: UIViewController {
         colorMixtureView.backgroundColor = UIColor(
             red: CGFloat(redSlider.value),
             green: CGFloat(greenSlider.value),
-            blue: CGFloat(blueSlider.value), alpha: CGFloat(1.0))
+            blue: CGFloat(blueSlider.value),
+            alpha: CGFloat(1.0)
+        )
        
+    }
+    
+    private func string(from slider: UISlider) -> String {
+        String(format: "%.2f", slider.value)
     }
     
 }
