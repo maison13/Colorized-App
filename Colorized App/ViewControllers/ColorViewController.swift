@@ -6,12 +6,12 @@
 //
 
 import UIKit
-
+// MARK: - protocols
 protocol SettingsViewControllerDelegate: AnyObject {
     func setBackgroundColor(for backgroundColor: UIColor )
 }
-
-class ColorViewController: UIViewController {
+// MARK: - Life Cycle View
+final class ColorViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,9 +23,7 @@ class ColorViewController: UIViewController {
         settingsVC.backgroundColor = view.backgroundColor
         settingsVC.delegate = self
     }
-    
-   
-    
+
 }
 
 // MARK: - SettingsViewControllerDelegate

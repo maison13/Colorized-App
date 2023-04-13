@@ -30,8 +30,7 @@ final class SettingsViewController: UIViewController {
     var backgroundColor: UIColor!
     unowned var delegate: SettingsViewControllerDelegate!
     
-  
-    // MARK: - initialization
+    // MARK: - Life Cycle View
     override func viewDidLoad() {
         super.viewDidLoad()
         setupAllValueOfColors()
@@ -41,9 +40,7 @@ final class SettingsViewController: UIViewController {
         redTextField.delegate = self
         greenTextField.delegate = self
         blueTextField.delegate = self
-        
     }
-    
     // MARK: - IBAction
     @IBAction func doneButtonAction(_ sender: UIButton) {
         delegate.setBackgroundColor(for: colorMixtureView.backgroundColor ?? backgroundColor)
@@ -69,7 +66,6 @@ final class SettingsViewController: UIViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         view.endEditing(true)
-
     }
     
    // MARK: - Private methods
@@ -85,8 +81,6 @@ final class SettingsViewController: UIViewController {
         redTextField.text = string(from: redSlider)
         greenTextField.text = string(from: greenSlider)
         blueTextField.text = string(from: blueSlider)
-        
-        
     }
     
     private func setupResultOfColorView() {
@@ -179,21 +173,21 @@ extension SettingsViewController: UITextFieldDelegate {
         setupResultOfColorView()
     }
    
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    func textField(
+        _ textField: UITextField,
+        shouldChangeCharactersIn range: NSRange,
+        replacementString string: String
+    ) -> Bool {
         let minValue = 0.0
         let value = NSString(string: textField.text!).replacingCharacters(in: range, with: string)
         
         if Double(value) ?? minValue > 1.0 || Double(value) ?? minValue < 0.0 {
-         showAlert(withTitle: "Ошибка ввода", andMessage: "Значение должно быть в диапазоне от 0 до 1.")
+            showAlert(withTitle: "Ошибка ввода", andMessage: "Значение должно быть в диапазоне от 0 до 1.")
         }
-       return true
-     }
+        return true
+    }
 
 }
-    
-    
-
-
 // MARK: - return RGBA from UIColor
 extension UIColor {
     var rgba: (red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat) {
