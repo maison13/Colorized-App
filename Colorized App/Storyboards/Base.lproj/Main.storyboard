@@ -113,17 +113,17 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="fFI-IW-qn6">
                                         <rect key="frame" x="244" y="0.0" width="44" height="112"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="center" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gcz-K1-DMP">
+                                            <textField opaque="NO" contentMode="center" horizontalHuggingPriority="248" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gcz-K1-DMP">
                                                 <rect key="frame" x="0.0" y="0.0" width="44" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="decimalPad" returnKeyType="done" smartDashesType="no" smartInsertDeleteType="no" textContentType="flight-number"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="decimalPad" returnKeyType="done" smartDashesType="no" smartInsertDeleteType="no"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="center" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hsV-1b-gmL">
+                                            <textField opaque="NO" tag="1" contentMode="center" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hsV-1b-gmL">
                                                 <rect key="frame" x="0.0" y="39" width="44" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="decimalPad" returnKeyType="done" smartDashesType="no" smartInsertDeleteType="no" textContentType="flight-number"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="center" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YVG-eS-imk">
+                                            <textField opaque="NO" tag="2" contentMode="center" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YVG-eS-imk">
                                                 <rect key="frame" x="0.0" y="78" width="44" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="decimalPad" returnKeyType="done" smartDashesType="no" smartInsertDeleteType="no" textContentType="flight-number"/>
@@ -170,6 +170,9 @@
                         <outlet property="redLabel" destination="waH-bm-Zjw" id="QZO-d0-4ac"/>
                         <outlet property="redSlider" destination="dQc-od-riS" id="p7S-eN-wyJ"/>
                         <outlet property="redTextField" destination="Gcz-K1-DMP" id="5hh-ki-Hrh"/>
+                        <outletCollection property="textFieldButtons" destination="Gcz-K1-DMP" collectionClass="NSMutableArray" id="2Gw-0c-y1a"/>
+                        <outletCollection property="textFieldButtons" destination="hsV-1b-gmL" collectionClass="NSMutableArray" id="R9E-ib-lq0"/>
+                        <outletCollection property="textFieldButtons" destination="YVG-eS-imk" collectionClass="NSMutableArray" id="3qv-IK-Q2R"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
