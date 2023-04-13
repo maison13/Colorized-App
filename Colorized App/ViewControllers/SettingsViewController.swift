@@ -36,10 +36,7 @@ final class SettingsViewController: UIViewController {
         super.viewDidLoad()
         setupAllValueOfColors()
         setupResultOfColorView()
-        
-        for button in textFieldButtons {
-            addDoneButton(textField: button)
-        }
+        addDoneButton()
         
         redTextField.delegate = self
         greenTextField.delegate = self
@@ -105,16 +102,24 @@ final class SettingsViewController: UIViewController {
         String(format: "%.2f", slider.value)
     }
     
-    private func showAlert(withTitle title: String, andMessage message: String, textField: UITextField? = nil) {
+    private func showAlert(
+        withTitle title: String,
+        andMessage message: String,
+        textField: UITextField? = nil,
+        textLabel: UILabel? = nil,
+        slider: UISlider? = nil
+    ) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okAktion = UIAlertAction(title: "ok", style: .default) { _ in
-            textField?.text = ""
+            textField?.text = "0.0"
+            textLabel?.text = "0.0"
+            slider?.value = 0.0
         }
         alert.addAction(okAktion)
         present(alert, animated: true)
         
     }
-    private func addDoneButton(textField: UITextField) {
+    private func setupDoneButton(textField: UITextField) {
         let keypadToolbar: UIToolbar = UIToolbar()
         let done = UIBarButtonItem(
             title: "Done",
@@ -131,13 +136,24 @@ final class SettingsViewController: UIViewController {
         keypadToolbar.setItems([flexibleSpace, done], animated: false)
         textField.inputAccessoryView = keypadToolbar
     }
-        /*private func checkValue(_ sender: UITextField) {
-            let textLength = sender.text?.count ?? 0
-            if textLength > 4 {
-                showAlert(withTitle: "Ошибка ввода", andMessage: "Диапазон значений должен быть от 0 до 1")
-            }
-            
-        }*/
+    private func addDoneButton() {
+        for button in textFieldButtons {
+            setupDoneButton(textField: button)
+        }
+    }
+    private func checkValue(_ sender: UITextField, label: UILabel, slider: UISlider) {
+        let textLength = sender.text?.count ?? 0
+        if textLength > 4 {
+            showAlert(
+                withTitle: "Ошибка ввода",
+                andMessage: "Длина строки не должна превышать 4 символа.",
+                textField: sender,
+                textLabel: label,
+                slider: slider
+            )
+        }
+        
+    }
     
 }
 // MARK: - UITextFieldDelegate
@@ -148,30 +164,35 @@ extension SettingsViewController: UITextFieldDelegate {
         
         switch textField {
         case redTextField:
-            
+            checkValue(redTextField, label: redLabel, slider: redSlider)
             redLabel.text = String(numberValue)
             redSlider.value = numberValue
         case greenTextField:
+            checkValue(greenTextField, label: greenLabel, slider: greenSlider)
             greenLabel.text = String(numberValue)
             greenSlider.value = numberValue
         default:
+            checkValue(blueTextField, label: blueLabel, slider: blueSlider)
             blueLabel.text = String(numberValue)
             blueSlider.value = numberValue
         }
         setupResultOfColorView()
     }
+   
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        if range.length + range.location > textField.text?.count ?? 0 {
-            return false
-        }
-        let newLimit = (textField.text?.count)! + string.count - range.length
-        return newLimit <= 4
+        let minValue = 0.0
+        let value = NSString(string: textField.text!).replacingCharacters(in: range, with: string)
         
-    }
+        if Double(value) ?? minValue > 1.0 || Double(value) ?? minValue < 0.0 {
+         showAlert(withTitle: "Ошибка ввода", andMessage: "Значение должно быть в диапазоне от 0 до 1.")
+        }
+       return true
+     }
 
-    
-    
 }
+    
+    
+
 
 // MARK: - return RGBA from UIColor
 extension UIColor {
